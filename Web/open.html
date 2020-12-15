@@ -4,17 +4,20 @@
 	<head>
 	<title>함께해요 동물의 숲</title>
 	<meta charset="UTF-8">
-	
+		
+	<script src="colors.js"></script>
+		
+	<input type="button" value ='밤' onclick =
+		" daynight(this)">		
+		<!-- refactoring -->
+		
 	<style>
 		body
 		{
 			background-image: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcvEJbh%2FbtqEDRqeByP%2FkTnK75yW8wW4kSKVfKz281%2Fimg.jpg'); background-size: cover;
-			
+  			background-blend-mode: multiply;
 		}
 
-		ul{  list-style:none;
-		     padding-left:0px;
-		  }
 	</style>
 		
 	</head>
@@ -35,7 +38,7 @@
        minlength="4" maxlength="8" size="10"><br><br>
 	
 	<!--<input type='submit' value='입장'>-->
-	<button class="join" type="button"><a href="main.html">입장</a></button>
+	<button class="join" type="button"><a id ="enter" href="main.html">입장</a></button>
 	
 	</div>
 
@@ -44,3 +47,4 @@
 <!--https://101juseung.github.io/Web1997/Web/1.html 여기로 들어가면 됨-->
 
 </html>
+<!--"지구 끝까지 중복을 찾아가서 없애라..!-->

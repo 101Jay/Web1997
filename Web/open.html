@@ -4,41 +4,60 @@
 	<head>
 	<title>함께해요 동물의 숲</title>
 	<meta charset="UTF-8">
-		
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+		 
 	<script src="colors.js"></script>
 		
 	<input type="button" value ='밤' onclick =
 		" daynight(this)">		
 		<!-- refactoring -->
-		
+	<link rel="stylesheet" href="style.css">
 	<style>
-		body
-		{
-			background-image: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcvEJbh%2FbtqEDRqeByP%2FkTnK75yW8wW4kSKVfKz281%2Fimg.jpg'); background-size: cover;
-  			background-blend-mode: multiply;
+		div#login{
+			margin-left:600px;
+			margin-right:600px;
+			padding:10px;
+			text-align:center;
+			
 		}
-
+		button{
+			border: none;
+			font-size:15px; padding:10px 10px;
+			width:100%;
+			background-color:#03c75a;
+			color:#fff;
+		}
+		
+		input#log,input#log2{
+			width:100%;
+			font-size:14px;
+			height: 30px;
+			line-height: 16px;
+			margin-bottom:10px;
+		}
+		a#enter{
+			text-decoration:none;
+			font-size:15px
+		}
 	</style>
 		
 	</head>
 	<!--<img src="https://post-phinf.pstatic.net/MjAyMDAzMTdfMjY4/MDAxNTg0Mzc0MjgzODYw.s_z979HMTIEmYloG7cIavhPBMgRdYRw-zcS-H1t6MXIg.3IirzoVtxV3C1MoNy748Z5yJPTqPMr21-gBmUUyKhs4g.JPEG/4555.jpg?type=w1200" width="100%">-->
 	
 	<body>
-		
-	<h1><p style="text-align:center;">함께해요! 동물의 숲</p></h1>
+	<br><br>
+	<h1>함께해요! 동물의 숲</h1>
+
 <br><br>
 	
-	<div>
-	<label for="name"><p style="text-align:center;">섬 이름</label><br>
-	<input type="text" id="name" name="name" placeholder="ID" required
+	<div id="login">	
+	<input id="log" type="text" id="name" name="name" placeholder="아이디" required
+       minlength="4" maxlength="8" size="10"><br>
+	<input id="log2" type="text" id="name" name="name" placeholder="비밀번호" required
        minlength="4" maxlength="8" size="10"><br>
 	
-	<label for="name"><p style="text-align:center;">입장코드</label><br>
-	<input type="text" id="name" name="name" placeholder="Password" required
-       minlength="4" maxlength="8" size="10"><br><br>
-	
 	<!--<input type='submit' value='입장'>-->
-	<button class="join" type="button"><a id ="enter" href="main.html">입장</a></button>
+	<button type="button"><a id ="enter" href="main.html" style="color:white">로그인</a></button> 
 	
 	</div>
 

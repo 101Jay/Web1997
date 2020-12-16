@@ -12,7 +12,7 @@ var body = {};
 		var target = document.querySelector('body'); 
 			
 		if(self.value ==='밤'){
-		body.setBackColor('black')
+		$('body').css('backgroundColor','black')
 		body.setColor('green')
 		
 		self.value ='낮'	
@@ -21,7 +21,7 @@ var body = {};
 		var i = 0;
 		while(i<links.length){
 			if (links[i].id==='enter'){
-				links[i].style.color='green';
+				links[i].style.color='white';
 			}
 			else{
 				links[i].style.color='white';
@@ -37,7 +37,12 @@ var body = {};
 		var links = document.querySelectorAll('a');
 		var i = 0;
 		while(i<links.length){
-		 links[i].style.color='blue';
+		 if (links[i].id==='enter'){
+				links[i].style.color='white';
+			}
+			else{
+				links[i].style.color='blue';
+			};
 		 i=i+1;
 		 }
 		 

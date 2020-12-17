@@ -1,4 +1,4 @@
-var body = {};
+var body = {};  
 		
 		body.setColor = function(color){
 			document.querySelector('body').style.color=color;
@@ -12,10 +12,10 @@ var body = {};
 		var target = document.querySelector('body'); 
 			
 		if(self.value ==='밤'){
-		$('body').css('backgroundColor','black')
-		body.setColor('green')
+		target.style.backgroundImage = "URL('http://www.gameinsight.co.kr/news/photo/202003/20143_46993_437.jpg')";						
+		body.setColor('white');
 		
-		self.value ='낮'	
+		self.value ='낮'	;
 		 
 		var links = document.querySelectorAll('a');
 		var i = 0;
@@ -30,8 +30,8 @@ var body = {};
 		 }
 		 }	
 		else{
-		body.setBackColor('white')
-		body.setColor('black')
+		target.style.backgroundImage = "URL('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcvEJbh%2FbtqEDRqeByP%2FkTnK75yW8wW4kSKVfKz281%2Fimg.jpg')";		
+		body.setColor('black');
 		self.value ='밤';		
 		
 		var links = document.querySelectorAll('a');

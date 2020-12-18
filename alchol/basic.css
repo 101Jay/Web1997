@@ -1,0 +1,70 @@
+
+	body{
+		font-family: 'Nanum Myeongjo', sans-serif;
+		margin:0;
+		padding:0;
+	}
+	h1{
+		font-family: 'Dancing Script', sans-serif;
+		font-size:50px;
+		font-weight:800;
+		text-align:center;
+		margin-top:30;
+		color:black;
+		padding-bottom:70px;
+		margin-bottom:0;
+
+	}	
+	
+	#top{
+		background-color: darksalmon;
+		width: 100%;
+	}
+	
+	.line1{
+		display: grid;
+		grid-template-columns:732.5px 200px 732.5px;
+		text-align:center;
+		padding-top:7;
+		padding-bottom:20;
+		border-bottom: 1px solid silver;
+		margin-bottom:0px;
+	}
+	#j{
+		text-align: right;
+	}
+	#a{
+		text-align: left;
+	}
+	div.item a{
+		color: white;
+		text-decoration:none;
+		font-family: 'Nanum Myeongjo', sans-serif;
+		font-size:20px;
+		font-weight:700;
+	}
+	
+	span#develob{
+		font-size:1;
+		text-align:right;
+		display:block;
+	}
+	
+	.main{
+		display: grid;
+		grid-template-columns:300px 200px 800px 1fr;
+		text-align:center;
+	}
+	.item2{
+		border-right: 1px solid silver;
+		padding-top:30px;
+		padding-bottom:700px;
+		font-weight:300px;
+	}
+	.item2 p{
+		color:black;
+		font-weight:400;
+	}
+	#left{
+		padding-left:300px;
+	}

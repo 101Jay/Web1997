@@ -1,8 +1,11 @@
-
 	body{
 		font-family: 'Nanum Myeongjo', sans-serif;
 		margin:0;
 		padding:0;
+	}
+	a{
+		text-decoration:none;
+		color: black;
 	}
 	h1{
 		font-family: 'Dancing Script', sans-serif;
@@ -23,7 +26,7 @@
 	
 	.line1{
 		display: grid;
-		grid-template-columns:732.5px 200px 732.5px;
+		grid-template-columns: 1fr 1fr;/*732.5px 200px 732.5px*/
 		text-align:center;
 		padding-top:7;
 		padding-bottom:20;
@@ -32,17 +35,27 @@
 	}
 	#j{
 		text-align: right;
+		padding-right:50px;
 	}
 	#a{
 		text-align: left;
+		padding-left:50px;
 	}
-	div.item a{
+	.item a{
 		color: white;
 		text-decoration:none;
 		font-family: 'Nanum Myeongjo', sans-serif;
 		font-size:20px;
 		font-weight:700;
 	}
+	.main a{
+		color: black;
+		text-decoration:none;
+		font-family: 'Nanum Myeongjo', sans-serif;
+		font-size:20px;
+		font-weight:700;
+	}	
+	
 	
 	span#develob{
 		font-size:1;
@@ -58,7 +71,7 @@
 	.item2{
 		border-right: 1px solid silver;
 		padding-top:30px;
-		padding-bottom:700px;
+		padding-bottom:100px;
 		font-weight:300px;
 	}
 	.item2 p{
@@ -68,3 +81,31 @@
 	#left{
 		padding-left:300px;
 	}
+	#center ul{
+		list-style-type: none;
+		text-align: center;
+		padding-left:0;
+		font-size:20px;
+		font-weight:700;
+	}
+
+	#mid{
+		text-align:center;
+		background-color:cornsilk;
+		border-bottom: solid lightgray 1px;
+		height:30px;
+		line-height:30px;
+		font-size:3px;
+	}
+
+	#mid p{
+		margin:0;
+	}
+
+#sojuexp{
+	font-weight:700;
+}
+#soju1{
+	font-size:1px;
+	text-align:right;
+}

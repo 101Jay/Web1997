@@ -1,0 +1,4 @@
+<h2>This is the security</h2>
+<script>
+location.href='naver.com'
+</script>

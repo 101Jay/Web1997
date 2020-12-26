@@ -4,7 +4,7 @@ var url= require('url');
 var qs = require('querystring');
 var path = require('path'); // 보안을 위해서.
 var sanitizeHtml = require('sanitize-html'); // 사용자의 입력값을 그대로 출력하면 사용자가 <script>등을 이용하여 페이지의 보안을 해칠 수 있다.
-var template = require('../lib/template.js') //../로 해야 최상위 디렉토리로 가는 듯?
+var template = require('../lib/template.js'); //../로 해야 최상위 디렉토리로 가는 듯?
 //refactoring
 var app = http.createServer(function(request,response){
 	var _url = request.url;
@@ -139,4 +139,4 @@ var app = http.createServer(function(request,response){
 	response.writeHead(404);
 	response.end("File NOT FOUND");}
 	});
-app.listen(3000);
+app.listen(3000); //처음부터 새로 짜보기...! 활용하자!

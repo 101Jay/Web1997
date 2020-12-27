@@ -14,16 +14,16 @@ module.exports = {
 				<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
 				<link rel="preconnect" href="https://fonts.gstatic.com">
 				<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+				<link rel="stylesheet" href="./stylesheets/basic.css" type="text/css">		
 					</div>	
 
-				<link rel="stylesheet" href="basic.css">	
 
 				</head>	
 				<body>
 
 				<div id="top">
 				<span id="develob">Dev.J.S</span>
-				<h1><a href="soju.html">Find Your Mariage</a></h1>	
+				<h1><a href="soju.html">Find Your Mariage</a></h1>		
 
 				<div class="line1">
 
@@ -51,7 +51,7 @@ module.exports = {
 
 
 				</body>	
-				<script src="basic.js"></script>
+				<script src="basic.js"></script>		
 				</html>
 				<!--google fonts http://davidbau.com/colors/-->
 				`;

@@ -18,7 +18,7 @@ var app = http.createServer(function(request,response){
 				var list = template.List(filelist);
 				var HTML = template.HTML(title, list,`<h2>${title}</h2>${description}`, `<a href="/create">create</a>`);
 
-				response.writeHead(200);
+				response.writeHead(200); //200번대는 정상적으로 갔다는 http번호
 				response.end(HTML);
 			})
 		}
@@ -139,4 +139,4 @@ var app = http.createServer(function(request,response){
 	response.writeHead(404);
 	response.end("File NOT FOUND");}
 	});
-app.listen(3000); //처음부터 새로 짜보기...! 활용하자!
+app.listen(3000); 

@@ -1,6 +1,7 @@
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
+var qs = require('querystring');
 
 var makeList = function(filelist){
 	var list = '<ul>';
@@ -89,10 +90,20 @@ var app = http.createServer(function(request, response){
 			response.end(HTML);
 		})
 	}else if(pathname==='/create_process'){
-		
-		//Here i start 12.29
-		//git remote remove origin
-		//git remote add origin https://101Jay:101Jay@github.com/101Jay/Web1997
+		var body='';
+		request.on('data',function(data){
+			body=body+data;
+		})
+		request.on('end', function(){
+			var post = qs.parse(body); // 객체형태로 분석해준다 -> title, description으로 나눠서!
+			var title = post.title;
+			var description = post.description;
+			fs.writeFile(`./DataBase/${title}`,description,'utf8',function(error){ //writeFile의 첫번째 인자로 위치까지 정해준다.
+				response.writeHead(302, {Location:`/?id=${title}`});  // wrtieHeader의 두번째 인자로 객체를 써서, redirect -> location으로 클라이언트를 보내준다.
+				response.end();	
+			})
+			
+		})
 	}
 })
 

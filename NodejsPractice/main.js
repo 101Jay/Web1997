@@ -91,6 +91,8 @@ var app = http.createServer(function(request, response){
 	}else if(pathname==='/create_process'){
 		
 		//Here i start 12.29
+		//git remote remove origin
+		//git remote add origin https://101Jay:101Jay@github.com/101Jay/Web1997
 	}
 })
 

@@ -125,7 +125,7 @@ var app = http.createServer(function(request,response){
 	}else if(pathname==='/delete_process'){
 		var body='';
 		request.on('data',function(data){
-			body=body+data;
+			body=body+data; //id 값을 받기 위함이다.
 		})
 		request.on('end',function(){
 			var post = qs.parse(body);

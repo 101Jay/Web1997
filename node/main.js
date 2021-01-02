@@ -114,7 +114,7 @@ var app = http.createServer(function(request,response){
 				var post = qs.parse(body);
 				var id = post.id;
 				var title = post.title;
-				var description =post.description;
+				var description =post.description;	
 				fs.rename(`Data/${id}`,`Data/${title}`, function(error){
 					fs.writeFile(`Data/${title}`, description,'utf8',function(err){
 						response.writeHead(302,{Location:`/?id=${title}`});  /*redirect*/

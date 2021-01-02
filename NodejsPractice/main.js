@@ -37,7 +37,7 @@ var makeHTML = function(title, description,list,control){
 	
 }
 
-var makeForm = function(){
+var makeCreateForm = function(){
 	var form = 
 	`
 	<form action="/create_process" method="post">
@@ -49,6 +49,19 @@ var makeForm = function(){
 	return form;
 }
 
+var makeUpdateForm = function(title,description){
+	var form = 
+		`
+		<form action="/update_process" method = "post">
+			<input type ="hidden" name ="id" value =${title}>
+			<p><input type = "text" name = "title" placeholder="title" value=${title}></p>	
+			<p><textarea name = "description" placeholder = "description" cols='40' rows ='8'>${description}</textarea></p>
+			<p><input type="submit" value="업데이트"></p>
+		</form>
+		`
+	return form;
+	
+}
 var app = http.createServer(function(request, response){
 	var _url = request.url;
 	var queryData = url.parse(_url,true).query;
@@ -60,7 +73,7 @@ var app = http.createServer(function(request, response){
 				var title = 'Play_List';
 				var description = 'Choice Your Playlist';
 				var list = makeList(filelist);
-				var control = `<a href = "/create">Create</a>`
+				var control = `<a href = "/create">새 노래</a>`
 				var HTML = makeHTML(title,description,list,control);
 				
 				response.writeHead(200);
@@ -71,7 +84,8 @@ var app = http.createServer(function(request, response){
 				fs.readFile(`DataBase/${queryData.id}`,'utf8',function(error,data){
 					var title = queryData.id;
 					var list = makeList(filelist);
-					var HTML = makeHTML(title,data,list,'');
+					var control = `<a href = "/update?id=${title}">업데이트</a>`;  //?뒤에 쿼리 스트링 넘겨두는거 유의!
+					var HTML = makeHTML(title,data,list,control);
 					
 					response.writeHead(200);
 					response.end(HTML);
@@ -83,7 +97,7 @@ var app = http.createServer(function(request, response){
 			var title = 'Play_List';
 			var description = 'Play your list';
 			var list = makeList(filelist);
-			var createForm = makeForm();
+			var createForm = makeCreateForm('/create_process');
 			var HTML = makeHTML(title,description,list,createForm);
 			
 			response.writeHead(200);
@@ -104,6 +118,36 @@ var app = http.createServer(function(request, response){
 			})
 			
 		})
+	}else if(pathname==='/update'){
+		fs.readdir('./DataBase', function(error, filelist){
+			fs.readFile(`DataBase/${queryData.id}`,'utf8',function(error, data){
+				var title = queryData.id;
+				var list = makeList(filelist);
+				var form = makeUpdateForm(title,data);
+				var HTML = makeHTML(title,form,list,`<a href = "/create">새 노래</a>`);
+				
+				response.writeHead(200);
+				response.end(HTML);
+			})
+			
+		})
+		
+	}else if(pathname==='/update_process'){
+		var body='';
+		request.on('data',function(data){
+			body=body+data;
+		})
+		request.on('end',function(){
+			var post = qs.parse(body);
+			var title = post.title;
+			var description = post.description;
+			fs.rename(`DataBase/${post.id}`,`DataBase/${title}`,function(error){
+				fs.writeFile(`DataBase/${title}`,description,'utf8',function(error){
+					response.writeHead(302, {Location : `/?id=${title}`});
+					response.end();
+				});
+			});
+		});
 	}
 })
 

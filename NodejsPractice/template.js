@@ -42,11 +42,11 @@ module.exports ={
 		`
 		return form;
 	},
-	updateForm : function(title,description){
+	updateForm : function(encodeTitle,title,description){
 		var form = 
 			`
 			<form action="/update_process" method = "post">
-				<input type ="hidden" name ="id" value =${title}>
+				<input type ="hidden" name ="id" value =${encodeTitle}>
 				<p><input type = "text" name = "title" placeholder="title" value=${title}></p>	
 				<p><textarea name = "description" placeholder = "description" cols='40' rows ='8'>${description}</textarea></p>
 				<p><input type="submit" value="업데이트"></p>
